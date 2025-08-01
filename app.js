@@ -24,3 +24,16 @@ function actualizarAmigos() {
         lista.innerHTML += `<li>${amigo}</li>`;
     });
 }
+
+//función que seleccione de manera aleatoria uno de los nombres almacenados en el array amigos.
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("No hay amigos para sortear.");
+        return;
+    }
+
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[indiceAleatorio];
+    
+    document.getElementById("resultado").innerHTML = `El amigo secreto es: ${amigoSorteado}`;
+}
