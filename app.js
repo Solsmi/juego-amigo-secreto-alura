@@ -9,8 +9,18 @@ function agregarAmigo() {
          // Agregar el nombre al array amigos:
         amigos.push(nombre);
         document.getElementById("amigo").value = "";
-        //mostrarAmigos();
+        actualizarAmigos();
     } else {
         alert("Por favor, ingresa un nombre.");
     }
+}
+
+//función para actualizar la lista de amigos
+function actualizarAmigos() {
+    const lista = document.getElementById("listaAmigos");
+    lista.innerHTML = ""; // Limpiar la lista existente
+
+    amigos.forEach(amigo => {
+        lista.innerHTML += `<li>${amigo}</li>`;
+    });
 }
